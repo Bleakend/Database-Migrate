@@ -1,5 +1,8 @@
 import os
 import logging
+import pandas as pd
+
+from Column import Column
 
 #Constants variables
 DIRECTORYPATH = r"Input Files/"
@@ -32,6 +35,12 @@ def is_empty_directory(input_files: list) -> bool:
     return True
 
 #Main starting point
-input_files = os.listdir(DIRECTORYPATH)
-input_files = list(filter(is_text_file, input_files))
-is_empty_directory(input_files)
+# input_files = os.listdir(DIRECTORYPATH)
+# input_files = list(filter(is_text_file, input_files))
+# is_empty_directory(input_files)
+
+d = {'a': 1, 'b': 2, 'c': 3.0}
+series = pd.Series(data=d, index=['a', 'b', 'c'], name="test")
+column = Column(series)
+
+print(column.column_type)
