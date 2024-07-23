@@ -6,7 +6,7 @@ the aim of this tool is to **migrate** Excel files into a complete
 **database** with all the correct datatypes and relationship and so on
 
 # Packages Used
-pandas
+pandas (uses openpyxl internally)
 jinja2
 pyodbc
 pyyaml

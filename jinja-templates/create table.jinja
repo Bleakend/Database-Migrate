@@ -1,5 +1,4 @@
-CREATE TABLE {{table_name}} (
-{% for column in columns %}
-{{column.column_name}} ({{column.column_type}}) {% if not loop.last %},{% endif %}
-{% endfor %}
+CREATE TABLE {{ table_name }}(
+    {% for column in columns %}{{ column.column_name }} {{ column.column_type }}{% if not loop.last %},
+    {% endif %}{% endfor %}
 )

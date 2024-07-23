@@ -6,14 +6,8 @@ TEMPLATE_PATH = r"jinja-templates"
 CREATE_TABLE_TEMPLATE = r"create table.jinja"
 env = Environment(loader = FileSystemLoader(TEMPLATE_PATH))
 
-d = {'a': 1, 'b': 2, 'c': 3.0}
-series = pd.Series(data=d, index=['a', 'b', 'c'], name="test")
-column = Column(series)
-column1 = Column(series)
-
-
-def generate_create_table_sql_statment():
+def generate_create_table_sql_statment(columns: list):
     template = env.get_template(CREATE_TABLE_TEMPLATE)
-    sql_statment = template.render()
+    sql_statment = template.render(columns=columns)
 
     return sql_statment
