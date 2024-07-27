@@ -6,12 +6,12 @@ the aim of this tool is to **migrate** Excel files into a complete
 **database** with all the correct datatypes and relationship and so on
 
 # Packages Used
-pandas (uses openpyxl internally)
-jinja2
-pyodbc
-pyyaml
+pandas (uses openpyxl internally)  
+jinja2  
+pyodbc  
+pyyaml  
 
 # Built-in packages used
-os
-sys
+os  
+sys  
 logging
