@@ -52,8 +52,12 @@ def is_empty_directory(input_files: list) -> bool:
 def read_tables(directory, input_files):
     tables = []
     for file in input_files:
-        table = Table(pd.read_excel(directory + file))
-        tables.append(table)
+        try:
+            table = Table(pd.read_excel(directory + file))
+            tables.append(table)
+        except Exception as e:
+            logging.error(f"There was an error while reading the file {file}:{e}\nPlease make sure the file is closed, have no passowrd and is accessible by your user.")
+            sys.exit()
     return tables
 
 
@@ -62,7 +66,6 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s: %(message)s",
     datefmt='%Y-%m-%d,%H:%M:%S',
 )
-
 #CONSTANTS
 YAML_CONFIG_FILE = r"config.yaml"
 SERVER_NAME, DATABASE_NAME, DIRECTORY_PATH = parse_config_yaml()
