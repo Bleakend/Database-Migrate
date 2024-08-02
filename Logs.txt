@@ -1,0 +1,21 @@
+2024-08-02,23:49:19 - INFO: 
+
+2024-08-02,23:49:19 - INFO: 
+
+2024-08-02,23:49:19 - INFO: 
+
+2024-08-02,23:49:19 - INFO: Config file has been read successfully!!
+2024-08-02,23:49:19 - INFO: there are 2 .xlsx files available in the directory
+
+2024-08-02,23:49:19 - INFO: id is of the type int
+2024-08-02,23:49:19 - INFO: name is of the type nvarchar(255)
+2024-08-02,23:49:19 - INFO: age is of the type int
+2024-08-02,23:49:19 - INFO: date is of the type date
+2024-08-02,23:49:19 - INFO: decimal_int is of the type decimal(12, 2)
+2024-08-02,23:49:19 - INFO: float is of the type decimal(12, 2)
+2024-08-02,23:49:19 - INFO: datetime is of the type date
+2024-08-02,23:49:19 - INFO: columns have been read successfully!
+2024-08-02,23:49:19 - INFO: test1 is of the type int
+2024-08-02,23:49:19 - INFO: test2 is of the type nvarchar(255)
+2024-08-02,23:49:19 - INFO: test3 is of the type int
+2024-08-02,23:49:19 - INFO: columns have been read successfully!

@@ -1,9 +1,10 @@
 import os
 import sys
-import logging
 import pandas as pd
 import pyodbc
 import yaml
+
+from logging_config import *
 from Table import Table
 from sql_generation import *
 
@@ -60,17 +61,11 @@ def read_tables(directory, input_files):
             sys.exit()
     return tables
 
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s: %(message)s",
-    datefmt='%Y-%m-%d,%H:%M:%S',
-)
+config_logging()
 #CONSTANTS
 YAML_CONFIG_FILE = r"config.yaml"
 SERVER_NAME, DATABASE_NAME, DIRECTORY_PATH = parse_config_yaml()
 DIRECTORY_PATH += "/"
-
 
 # connection = pyodbc.connect("Driver={ODBC Driver 17 for SQL Server};"
 #                             f"Server={SERVER_NAME};"
@@ -81,7 +76,7 @@ DIRECTORY_PATH += "/"
 # cursor.execute("drop table test")
 # connection.commit()
 # connection.close()
-## Main starting point
+# Main starting point
 input_files = os.listdir(DIRECTORY_PATH)
 input_files = list(filter(is_valid_extention, input_files))
 is_empty_directory(input_files)
